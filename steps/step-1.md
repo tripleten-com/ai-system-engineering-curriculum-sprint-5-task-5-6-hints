@@ -31,25 +31,25 @@ Two consequences follow:
 
 ### The run never pauses, or still ends with `not_enabled`
 
-<details><summary>Move 1</summary>
+<details><summary>Hint 1</summary>
 
 Is the server running your new code? How does it get your code: from its image, or from a mount?
 
 </details>
 
-<details><summary>Move 2</summary>
+<details><summary>Hint 2</summary>
 
 If the image holds your code, what rebuilds it? If the code is mounted, does the running server pick up the change on its own?
 
 </details>
 
-<details><summary>Move 3</summary>
+<details><summary>Hint 3</summary>
 
 Load the change the way your setup needs, then run again on a fresh exception.
 
 </details>
 
-<details><summary>Move 4</summary>
+<details><summary>Hint 4</summary>
 
 Still no pause? Open the two handlers that used to end the run with `not_enabled`. That branch is where the approval point goes. Is the approval requirement from your authority configuration read there, and is it on?
 
@@ -57,25 +57,25 @@ Still no pause? Open the two handlers that used to end the run with `not_enabled
 
 ### Your script can't open a review on a fresh exception
 
-<details><summary>Move 1</summary>
+<details><summary>Hint 1</summary>
 
 Which exception id does your script's tool call carry? Is it the id of the exception this run is working on?
 
 </details>
 
-<details><summary>Move 2</summary>
+<details><summary>Hint 2</summary>
 
 Who knows the run's exception id: the script, or the run's state?
 
 </details>
 
-<details><summary>Move 3</summary>
+<details><summary>Hint 3</summary>
 
 Read your Task 5 binding check. What happens when the id in the arguments differs from the id in the context?
 
 </details>
 
-<details><summary>Move 4</summary>
+<details><summary>Hint 4</summary>
 
 The approach: `act` builds the tool's arguments from the proposal's input plus the exception id from the run's state, and fills the context from the run too. Remove the id from every script's tool input, so the script carries only the review's other three inputs.
 
@@ -83,25 +83,25 @@ The approach: `act` builds the tool's arguments from the proposal's input plus t
 
 ### Every decision looks on time
 
-<details><summary>Move 1</summary>
+<details><summary>Hint 1</summary>
 
 Where does your code read the time of the request?
 
 </details>
 
-<details><summary>Move 2</summary>
+<details><summary>Hint 2</summary>
 
 What happens to every line in `act` before `interrupt()` when the decision arrives?
 
 </details>
 
-<details><summary>Move 3</summary>
+<details><summary>Hint 3</summary>
 
 Which state did the server save before `act` started? Which node wrote it?
 
 </details>
 
-<details><summary>Move 4</summary>
+<details><summary>Hint 4</summary>
 
 The approach: stamp the request time in `propose`, when it adds the proposal to the state, and only read it in `act`.
 
@@ -109,19 +109,19 @@ The approach: stamp the request time in `propose`, when it adds the proposal to 
 
 ### You can't hand a test clock to the node
 
-<details><summary>Move 1</summary>
+<details><summary>Hint 1</summary>
 
 What does a node receive? Can the run configuration carry a Python object all the way to the server?
 
 </details>
 
-<details><summary>Move 2</summary>
+<details><summary>Hint 2</summary>
 
 If the clock can't arrive with each run, where else can it live so that both nodes read the same one?
 
 </details>
 
-<details><summary>Move 3</summary>
+<details><summary>Hint 3</summary>
 
 Keep one replaceable clock at module level in your approval code. Both nodes read it, and a test swaps it for one it can move.
 
@@ -129,19 +129,19 @@ Keep one replaceable clock at module level in your approval code. Both nodes rea
 
 ### The cap never triggers
 
-<details><summary>Move 1</summary>
+<details><summary>Hint 1</summary>
 
 What does your count count: calls, or calls that opened a review?
 
 </details>
 
-<details><summary>Move 2</summary>
+<details><summary>Hint 2</summary>
 
 Where does the run keep its tool results between proposals?
 
 </details>
 
-<details><summary>Move 3</summary>
+<details><summary>Hint 3</summary>
 
 Before pausing on a tool call, count the opened results on the state and compare them with the cap from your authority configuration. If the run is already at the cap, halt with your own reason instead of pausing.
 
@@ -149,19 +149,19 @@ Before pausing on a tool call, count the opened results on the state and compare
 
 ### The timeout file loads anything
 
-<details><summary>Move 1</summary>
+<details><summary>Hint 1</summary>
 
 What does your loader do with a missing value, a word, a zero and a negative number? Try each.
 
 </details>
 
-<details><summary>Move 2</summary>
+<details><summary>Hint 2</summary>
 
 How does your Task 4 loader refuse a bad file? Follow the same pattern.
 
 </details>
 
-<details><summary>Move 3</summary>
+<details><summary>Hint 3</summary>
 
 A bad timeout should fail when the file loads, not when a decision arrives.
 
