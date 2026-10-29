@@ -90,7 +90,7 @@ The CI workflow file must stay exactly as the template supplied it. Compare your
 
 ## In this Task
 
-<details><summary>`poe demo` hangs or times out</summary>
+<details><summary><code>poe demo</code> hangs or times out</summary>
 
 Does the demo answer the approval pause? A paused run waits; nothing ends it on its own.
 

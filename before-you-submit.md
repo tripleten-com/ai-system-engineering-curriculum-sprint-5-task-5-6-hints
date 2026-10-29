@@ -19,7 +19,7 @@ The basic checks confirm that your work is there. They don't judge whether it's 
 ## Can your tests fail when the code is wrong?
 
 - Does every test check the paused state before it sends a decision?
-- Did you bypass `interrupt()`, swap the order of the checks and reuse one approval for two proposals once each, and see tests fail?
+- Did you bypass `interrupt()`, drop the deadline check and accept any role once each, and see tests fail?
 
 ## Did you state the limits of what your checks show?
 
