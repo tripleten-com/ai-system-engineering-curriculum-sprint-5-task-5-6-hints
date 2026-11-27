@@ -37,73 +37,12 @@ If a real secret reached a commit, deleting it in a later commit doesn't remove 
 
 </details>
 
-## No test was added or changed
-
-<details><summary>Hint 1</summary>
-
-Does your pull request touch a file under `tests/student/`? The check looks at the pull request's changes, not at the tests that already exist.
-
-</details>
-
-<details><summary>Hint 2</summary>
-
-A test you changed only in a commit that isn't on the pull request's branch doesn't count. Compare your branch with `main` and look for the test file in the diff.
-
-</details>
-
-## The evidence note is missing or incomplete
-
-<details><summary>Hint 1</summary>
-
-Is the note at exactly `docs/capstone/task-NN.md`, with this Task's number in two digits? Is it merged into `main`?
-
-</details>
-
-<details><summary>Hint 2</summary>
-
-Does it have all three headings, **What I built**, **How I checked it** and **What I'd defend**, each with text under it? A heading with nothing under it, or a "TODO", fails the check.
-
-</details>
-
-## `poe demo` failed
-
-<details><summary>Hint 1</summary>
-
-Run `poe demo` on your machine from a fresh start of the stack. Does it exit 0, and does it end with its run summary? Read the last lines it prints before it stops.
-
-</details>
-
-<details><summary>Hint 2</summary>
-
-Did this Task change something the demo depends on, such as a script, a configuration value or a command? Run the demo before and after this Task's changes and compare where each run ends.
-
-</details>
-
-## The workflow file changed
-
-<details><summary>Hint 1</summary>
-
-The CI workflow file must stay exactly as the template supplied it. Compare your copy with `main` of the template, and look for an edit you didn't mean to make, such as a reformatted line or changed line endings.
-
-</details>
 <!-- core:end -->
 
 ## In this Task
 
-<details><summary><code>poe demo</code> hangs or times out</summary>
-
-Does the demo answer the approval pause? A paused run waits; nothing ends it on its own.
-
-</details>
-
 <details><summary>Your earlier tests fail</summary>
 
 Which behavior do they pin? Did this Task replace it on purpose? Change only those tests, and say which ones and why in your evidence note.
-
-</details>
-
-<details><summary>The evidence note check fails though every heading has text</summary>
-
-Does the note contain anything in angle brackets that reads like a placeholder? Replace it with the real value or plain words.
 
 </details>

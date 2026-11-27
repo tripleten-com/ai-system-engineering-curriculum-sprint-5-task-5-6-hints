@@ -1,6 +1,25 @@
 # Before you submit
 
-The basic checks confirm that your work is there. They don't judge whether it's right. Your instructor reads your pull requests and evidence notes with four questions. Ask them of your own work first.
+The basic checks confirm that the system runs: CI is green with `poe verify` and the secret scan is clean. They don't judge whether your work is right, and they don't read the rest of your submission. Your instructor reads your pull requests and evidence notes with four questions. Ask them of your own work first.
+
+## Is everything there that no check reads?
+
+- Does your pull request add or change at least one test under `tests/student/`?
+- Is your evidence note at `docs/capstone/task-06.md`, and does each of its three headings, **What I built**, **How I checked it** and **What I'd defend**, have text under it?
+- Does `poe demo` run the vaccine exception end to end from a fresh start of the stack and finish with its run summary?
+- Is the CI workflow file exactly as the template supplied it?
+
+<details><summary><code>poe demo</code> hangs or times out</summary>
+
+Does the demo answer the approval pause? A paused run waits; nothing ends it on its own.
+
+</details>
+
+<details><summary>Your evidence note still reads like a draft</summary>
+
+Does the note contain anything in angle brackets that reads like a placeholder? Replace it with the real value or plain words.
+
+</details>
 
 ## Did you meet the Task's requirements?
 
